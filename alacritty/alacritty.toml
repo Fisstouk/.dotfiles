@@ -1,0 +1,16 @@
+general.import = ["/home/lyronn/.config/alacritty/themes/themes/breeze.toml"]
+
+[font]
+size = 13.0
+
+[font.bold]
+family = "SourceCodePro"
+style = "Bold"
+
+[font.italic]
+family = "SourceCodePro"
+style = "Italic"
+
+[font.normal]
+family = "JetBrainsMono"
+style = "Regular"
