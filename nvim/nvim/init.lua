@@ -35,6 +35,14 @@ require "paq" {
         "bfrg/vim-cpp-modern",
         -- Monokai
         "tanvirtin/monokai.nvim",
+        -- Nvim LSP
+        "neovim/nvim-lspconfig",
+        -- Nvim Tree
+        "nvim-tree/nvim-tree.lua",
+        -- Nvim Treesitter
+        "nvim-treesitter/nvim-treesitter",
+        -- Bash LSP
+        "bash-lsp/bash-language-server"
 }
 
 -- Start Lualine package
@@ -44,3 +52,34 @@ require('lualine').setup {
 		theme = 'molokai'
 	}
 }
+
+require("nvim-tree").setup({
+  sort = {
+    sorter = "case_sensitive",
+  },
+  view = {
+    width = 30,
+  },
+  renderer = {
+    group_empty = true,
+  },
+  filters = {
+    dotfiles = true,
+  },
+})
+
+require("nvim-treesitter.configs").setup({
+  ensure_installed = {
+    "terraform",
+    "hcl"
+  },
+  highlight = {
+    enable = true
+  }
+})
+
+vim.lsp.config.bashls = {
+  cmd = { 'bash-language-server', 'start' },
+  filetypes = { 'bash', 'sh' }
+}
+vim.lsp.enable 'bashls'

@@ -23,6 +23,7 @@ alias ls="ls --color -F"
 alias ll="ls --color -rtl"
 alias mkdir="mkdir -vp"
 alias rm="rm -Iv --preserve-root"
+alias find5min="find . -mmin 5 -type f -exec ls -la '{}' \;"
 
 #####
 # Git
@@ -55,3 +56,6 @@ RPROMPT=' [%F{yellow}%?%f] '
 
 # Allow comments in interactive shells like Bash
 setopt INTERACTIVE_COMMENTS
+
+# Default editor
+export EDITOR=nvim
